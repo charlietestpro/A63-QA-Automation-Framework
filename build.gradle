@@ -24,5 +24,7 @@ test {
 test {
     useTestNG() {
         suites "src/test/resources/Smoke.xml"
+        suites "src/test/resources/Regression.xml"
+
     }
 }
