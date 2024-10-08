@@ -12,7 +12,7 @@ import java.time.Duration;
 
 public class BaseTest {
     public WebDriver driver;
-    public String url = "http://qa.koel.app/";
+    public String url = "https://qa.koel.app/#!/home";
 
     @BeforeSuite
     static void setupClass()
