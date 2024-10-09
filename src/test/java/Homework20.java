@@ -26,7 +26,7 @@ public class Homework20 extends BaseTest
         {
             // Create the playlist
             createPlaylist();
-            // Then delete it
+            // Then delete the playlist
             clickPlaylist();
             clickDeletePlaylist();
         }
