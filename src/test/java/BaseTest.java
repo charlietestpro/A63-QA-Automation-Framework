@@ -21,7 +21,7 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
     }
     @BeforeMethod
-
+    @Parameters({"BaseURL"})
     public void launchClass(String BaseURL)
     {
         ChromeOptions options = new ChromeOptions();
@@ -30,13 +30,13 @@ public class BaseTest {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
-
+        url = BaseURL;
         navigateToPage();
     }
     @AfterMethod
     public void closeBroswer()
     {
-      // driver.quit();
+       driver.quit();
     }
     public void navigateToPage()
     {
