@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -8,6 +9,7 @@ import org.testng.annotations.Test;
 
 public class Homework20 extends BaseTest
 {
+
     @Test
     public void deletePlaylist() throws InterruptedException {
 
@@ -18,7 +20,7 @@ public class Homework20 extends BaseTest
         clickLoginBtn();
         if(doesPlaylistExist()) {
             // If there is a playlist then delete it
-            clickPlaylist();
+            doubleClickPlaylist();
             clickDeletePlaylist();
 
         }
@@ -27,7 +29,7 @@ public class Homework20 extends BaseTest
             // Create the playlist
             createPlaylist();
             // Then delete the playlist
-            clickPlaylist();
+            doubleClickPlaylist();
             clickDeletePlaylist();
         }
 
@@ -49,10 +51,10 @@ public class Homework20 extends BaseTest
         }
         return false;
     }
-    public void clickPlaylist() throws InterruptedException
+    public void doubleClickPlaylist() throws InterruptedException
     {
         WebElement selectPlaylist = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"playlists\"]/ul/li[3]/a")));
-        selectPlaylist.click();
+       selectPlaylist.click();
     }
     public void clickDeletePlaylist() throws InterruptedException
     {

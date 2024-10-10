@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
@@ -17,6 +18,7 @@ public class BaseTest {
     public WebDriver driver;
     public WebDriverWait wait = null;
     public String url = "https://qa.koel.app/#!/home";
+
 
     @BeforeSuite
     static void setupClass()
@@ -62,6 +64,7 @@ public class BaseTest {
     {
         WebElement submit = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[type='submit']")));
         submit.click();
+
     }
 
 }
