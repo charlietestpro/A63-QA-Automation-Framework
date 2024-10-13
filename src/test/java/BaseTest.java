@@ -15,9 +15,10 @@ import org.testng.annotations.Parameters;
 import java.time.Duration;
 
 public class BaseTest {
-    public WebDriver driver;
-    public WebDriverWait wait = null;
-    public String url = "https://qa.koel.app/#!/home";
+    public static WebDriver driver = null;
+    public static WebDriverWait wait = null;
+    public static String url = null;
+    public static Actions actions = null;
 
 
     @BeforeSuite
@@ -37,10 +38,11 @@ public class BaseTest {
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         url = BaseURL;
+        actions = new Actions(driver);
         navigateToPage();
     }
     @AfterMethod
-    public void closeBroswer()
+    public void closeBrowser()
     {
        driver.quit();
     }
@@ -48,6 +50,7 @@ public class BaseTest {
     {
         driver.get(url);
     }
+    /*
     public void provideEmail(String email)
     {
         WebElement emailField = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='email']")));
@@ -60,6 +63,7 @@ public class BaseTest {
         passwordField.clear();
         passwordField.sendKeys(password);
     }
+    */
     public void clickLoginBtn()
     {
         WebElement submit = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[type='submit']")));
