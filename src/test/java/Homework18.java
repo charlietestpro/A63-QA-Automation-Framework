@@ -31,13 +31,13 @@ public class Homework18 extends BaseTest
 
     public void clickPlayNextSong() throws InterruptedException
     {
-        WebElement viewAll = driver.findElement(By.cssSelector("//i[@data-testid='play-next-btn']"));
+        WebElement viewAll = driver.findElement(By.xpath("//i[@data-testid='play-next-btn']"));
         viewAll.click();
         Thread.sleep(2000);
     }
     public void clickPlay() throws InterruptedException
     {
-        WebElement viewAll = driver.findElement(By.cssSelector("//span[@data-testid='play-btn']"));
+        WebElement viewAll = driver.findElement(By.xpath("//span[@data-testid='play-btn']"));
         viewAll.click();
         Thread.sleep(2000);
     }
