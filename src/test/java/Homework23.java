@@ -11,8 +11,8 @@ public class Homework23 extends BaseTest
     @Test
     public void deletePlaylist() throws InterruptedException {
 
-        LoginPage loginPage = new LoginPage(driver);
-        HomePage homePage = new HomePage(driver);
+        LoginPage loginPage = new LoginPage(getDriver());
+        HomePage homePage = new HomePage(getDriver());
 
         loginPage.provideEmail("charlie.hall@testpro.io").providePassword("8y4me5ba").clickSubmit();
 
