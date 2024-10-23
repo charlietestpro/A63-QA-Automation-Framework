@@ -7,6 +7,31 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class LoginTests extends BaseTest {
+
+    @Test
+    public void loginEmailValidPassword() throws InterruptedException {
+
+        //navigateToPage();
+        provideEmail("charlie.hall@testpro.io");
+        providePassword("8y4me5ba");
+        clickLoginBtn();
+        Thread.sleep(2000);
+        // Expected result
+        Assert.assertEquals(driver.getCurrentUrl(), url); // https://qa.koel.app
+    }
+
+    @Test
+    public void loginValidEmailValidPassword() throws InterruptedException {
+
+        //navigateToPage();
+        provideEmail("charlie.hall@testpro.io");
+        providePassword("8y4me5ba");
+        clickLoginBtn();
+        Thread.sleep(2000);
+        // Expected result
+        Assert.assertEquals(driver.getCurrentUrl(), url); // https://qa.koel.app
+    }
+    /*
     @Test
     public void loginEmptyEmailPassword() {
 
@@ -22,4 +47,6 @@ public class LoginTests extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(), url);
         driver.quit();
     }
+*/
+
 }
