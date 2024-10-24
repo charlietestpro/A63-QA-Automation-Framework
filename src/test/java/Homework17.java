@@ -13,7 +13,7 @@ public class Homework17 extends BaseTest
     @Test
     public void addSongToPlaylist() throws InterruptedException {
 
-        String playlistName = "Added 1 song into \"Charlie\"";
+        String playlistName = "Added 1 song into \"Charlie.\"";
 
         navigateToPage();
 
@@ -36,13 +36,13 @@ public class Homework17 extends BaseTest
     }
     public void clickViewAllBtn() throws InterruptedException
     {
-        WebElement viewAll = driver.findElement(By.cssSelector("//button[@data-test='view-all-songs-btn']"));
+        WebElement viewAll = driver.findElement(By.xpath("//button[@data-test='view-all-songs-btn']"));
         viewAll.click();
         Thread.sleep(2000);
     }
     public void selectFirstSong() throws InterruptedException
     {
-        WebElement firstSong = driver.findElement(By.xpath("//*[@id=\"songsWrapper\"]/div/div/div[1]/table/tr[1]"));
+        WebElement firstSong = driver.findElement(By.xpath("//*[@id=\"songResultsWrapper\"]/div/div/div[1]/table/tr/td[@class='title']"));
         firstSong.click();
         Thread.sleep(2000);
     }
@@ -54,7 +54,7 @@ public class Homework17 extends BaseTest
     }
     public void choosePlaylist() throws InterruptedException
     {
-        WebElement playList = driver.findElement(By.xpath("//section[@id='songResultsWrapper']//li[contains(text(), 'Test Pro Playlist')]"));
+        WebElement playList = driver.findElement(By.xpath("//section[@id='songResultsWrapper']//li[contains(text(), 'Charlie')]"));
         playList.click();
         Thread.sleep(2000);
     }
