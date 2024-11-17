@@ -64,13 +64,13 @@ public class BaseTest {
         threadDriver.get().close();
         threadDriver.remove();
     }
-    /*
+
     public void closeBrowser()
     {
        driver.quit();
     }
 
-     */
+
     public void navigateToPage()
     {
         getDriver().get(url);
@@ -95,6 +95,7 @@ public class BaseTest {
         ltOptions.put("seCdp", true);
         //ltOptions.put("resolution", "1920x1080");
         //ltOptions.put("project", "Untitled");
+       // ltOptions.put("selenium_version", "4.0.0");
         ltOptions.put("selenium_version", "4.0.0");
         //ltOptions.put("driver_version", "129.0");
         //ltOptions.put("w3c", true);
@@ -111,12 +112,9 @@ public class BaseTest {
             case "grid-chrome": // gradle clean test -Dbrowser=grid-chrome
                 caps.setCapability("browserName", "chrome");
                 return driver = new RemoteWebDriver(URI.create(gridURL).toURL(), caps);
-                /*
             case "firefox": //gradle clean test -Dbrowser=firefox
                 WebDriverManager.firefoxdriver().setup();
                 return driver = new FirefoxDriver();
-
-                 */
             case "cloud":
                 return lambdaTest();
             default:
