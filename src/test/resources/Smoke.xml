@@ -3,11 +3,14 @@
 
 <suite name="TestNG" parallel="methods" thread-count="2">
     <parameter name="BaseURL" value="https://qa.koel.app/"/>
-    <test name="Example Test" preserve-order="false">
+    <test name="Smoke Test" preserve-order="false">
 
         <classes>
-            <class name="LoginTests"/>
-            <class name="PlaylistTests"/>
+            <class name="LoginTests">
+                    <methods>
+                        <include name="testLoginValid"/>
+                    </methods>
+            </class>
         </classes>
     </test>
 </suite>
